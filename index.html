@@ -1,49 +1,237 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>Privacy Policies</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policies — Ryu Kaneko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Inter:wght@400;500&display=swap">
   <style>
-    :root { --accent: #7A5C00; --dark: #1A1A1A; --gray: #666; --bg: #FAFAF8; --border: #E8E3DA; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; background: var(--bg); color: var(--dark); line-height: 1.8; }
-    header { background: var(--dark); padding: 48px 24px 40px; text-align: center; }
-    header h1 { color: #D4A82A; font-size: 28px; margin-bottom: 8px; }
-    header p { color: rgba(255,255,255,0.55); font-size: 14px; }
-    main { max-width: 600px; margin: 0 auto; padding: 48px 24px 80px; }
-    a.app-link { display: block; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; text-decoration: none; color: var(--dark); }
-    a.app-link:hover { border-color: var(--accent); }
-    a.app-link h2 { font-size: 17px; color: var(--accent); margin-bottom: 4px; }
-    a.app-link p { font-size: 14px; color: var(--gray); }
-    footer { text-align: center; padding: 32px 24px; font-size: 13px; color: var(--gray); border-top: 1px solid var(--border); }
+    /* Modern minimal — centered typographic layout, subdued palette */
+    :root {
+      --bg: #F5F5F4;
+      --surface: #FFFFFF;
+      --fg: #131312;
+      --muted: #78776F;
+      --border: #E5E4E0;
+      --accent: #2563EB;
+      --accent-muted: rgba(37, 99, 235, 0.08);
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #111110;
+        --surface: #1C1C1A;
+        --fg: #EFEEEB;
+        --muted: #88877F;
+        --border: #2C2C29;
+        --accent: #6B8FFF;
+        --accent-muted: rgba(107, 143, 255, 0.10);
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #111110;
+      --surface: #1C1C1A;
+      --fg: #EFEEEB;
+      --muted: #88877F;
+      --border: #2C2C29;
+      --accent: #6B8FFF;
+      --accent-muted: rgba(107, 143, 255, 0.10);
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-block: 0;
+    }
+
+    .page {
+      max-width: 560px;
+      margin: 0 auto;
+      padding-block: 80px 96px;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 64px;
+    }
+    .header-eyebrow {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(42px, 8vw, 60px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      color: var(--fg);
+    }
+
+    /* App list */
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .app-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--fg);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .app-item:hover {
+      border-color: var(--accent);
+      background: var(--accent-muted);
+    }
+    .app-item:hover .app-name {
+      color: var(--accent);
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .app-body { min-width: 0; }
+
+    .app-name {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+      transition: color 0.15s;
+    }
+    .app-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Multi-link item */
+    .app-item-multi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .app-item-multi:hover {
+      border-color: var(--accent);
+    }
+    .app-item-multi-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px 16px;
+    }
+    .app-item-multi-links {
+      display: flex;
+      border-top: 1px solid var(--border);
+    }
+    .app-item-multi-links a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .app-item-multi-links a:hover {
+      background: var(--accent-muted);
+      color: var(--accent);
+    }
+    .app-item-multi-links a + a {
+      border-left: 1px solid var(--border);
+    }
+    .link-icon {
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      font-size: 12px;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
-<header>
-  <h1>Privacy Policies</h1>
-  <p>Ryu Kaneko — App Privacy Policies</p>
-</header>
-<main>
-  <a class="app-link" href="./record-recorder/">
-    <h2>Record Recorder</h2>
-    <p>アナログレコードコレクション管理アプリ / Vinyl record collection manager</p>
-  </a>
-  <a class="app-link" href="./suchi/">
-    <h2>Suchi</h2>
-    <p>バイク・自転車向けコンパス直線ナビアプリ / Compass beeline nav for motorcycles & bicycles</p>
-  </a>
-  <a class="app-link" href="./tattva/privacy-policy/">
-    <h2>TATTVA</h2>
-    <p>macOS向けAIデザイン仕様書生成アプリ / AI design spec generator for macOS</p>
-    <p style="margin-top:6px;font-size:13px;">
-      <span style="margin-right:12px;">📄 <a href="./tattva/privacy-policy/" onclick="event.stopPropagation()">プライバシーポリシー</a></span>
-      <span>📘 <a href="./tattva/manual/" onclick="event.stopPropagation()">ユーザーマニュアル</a></span>
-    </p>
-  </a>
-</main>
-<footer>
-  <p>© 2026 Ryu Kaneko</p>
-</footer>
+<div class="page">
+  <header class="header">
+    <p class="header-eyebrow">Ryu Kaneko</p>
+    <h1>Privacy Policies</h1>
+  </header>
+
+  <div class="app-list">
+    <a class="app-item" href="./record-recorder/">
+      <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b6/17/8c/b6178cca-7e3f-55be-49fb-51e3e7c626d4/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg" alt="Record Recorder icon">
+      <div class="app-body">
+        <div class="app-name">Record Recorder</div>
+        <div class="app-desc">アナログレコードコレクション管理アプリ<br>Vinyl record collection manager</div>
+      </div>
+    </a>
+
+    <a class="app-item" href="./suchi/">
+      <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/40/f8/3d/40f83d6d-d504-acff-e3e6-cf60b7ef3998/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="Suchi icon">
+      <div class="app-body">
+        <div class="app-name">Suchi</div>
+        <div class="app-desc">バイク・自転車向けコンパス直線ナビアプリ<br>Compass beeline nav for motorcycles &amp; bicycles</div>
+      </div>
+    </a>
+
+    <div class="app-item-multi">
+      <div class="app-item-multi-header">
+        <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/9b/ed/be9bed73-0c7e-6eea-1fdb-44e15912e76f/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png" alt="TATTVA icon">
+        <div class="app-body">
+          <div class="app-name">TATTVA</div>
+          <div class="app-desc">macOS向けAIデザイン仕様書生成アプリ<br>AI design spec generator for macOS</div>
+        </div>
+      </div>
+      <div class="app-item-multi-links">
+        <a href="./tattva/privacy-policy/">
+          <span class="link-icon">📄</span>プライバシーポリシー
+        </a>
+        <a href="./tattva/manual/">
+          <span class="link-icon">📘</span>ユーザーマニュアル
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Ryu Kaneko</p>
+  </footer>
+</div>
 </body>
 </html>
