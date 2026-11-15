@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー — TATTVA</title>
+  <style>
+    :root {
+      --accent: #3b5bdb;
+      --dark:   #1A1A1A;
+      --gray:   #666666;
+      --bg:     #FAFAF8;
+      --card:   #FFFFFF;
+      --border: #E8E3DA;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+    header {
+      background: var(--dark);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header h1 {
+      color: #7c9bff;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .meta {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .meta span { color: var(--dark); font-weight: 600; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+    }
+    section h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+    section p {
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    section p:last-child { margin-bottom: 0; }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+    .highlight {
+      background: #EEF2FF;
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      margin: 16px 0;
+      color: var(--dark);
+    }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 480px) {
+      section { padding: 20px 18px; }
+      header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>TATTVA</h1>
+  <p>プライバシーポリシー / Privacy Policy</p>
+</header>
+
+<main>
+
+  <div class="meta">
+    <p>最終更新: <span>2026年5月4日</span></p>
+    <p>開発者: <span>DRAGON SYSTEM（金子 龍）</span>　連絡先: <span>contact@dragonsystem.net</span></p>
+  </div>
+
+  <section>
+    <h2>基本方針</h2>
+    <p>DRAGONSYSTEM（以下、「当方」）は、macOS向けアプリケーション「TATTVA」（以下、「本アプリ」）におけるユーザーのプライバシーを尊重し、個人情報の保護に努めます。</p>
+    <div class="highlight">
+      本アプリは、当方のサーバーに対してユーザーの個人情報、入力データ、生成されたファイル、および利用履歴を一切送信・収集しません。本アプリはユーザーのmacOSデバイス上でローカルに動作します。
+    </div>
+  </section>
+
+  <section>
+    <h2>1. 収集する情報と利用目的</h2>
+    <p>本アプリは、当方（開発者）のサーバーに対して、ユーザーの個人情報、入力データ、生成されたファイル、および利用履歴を<strong>一切送信・収集しません</strong>。本アプリはユーザーのmacOSデバイス上でローカルに動作します。</p>
+  </section>
+
+  <section>
+    <h2>2. APIキーと外部サービスとの通信</h2>
+    <p>本アプリは、AI機能を提供するためにGoogle社が提供するGemini APIを利用します。</p>
+    <ul>
+      <li><strong>APIキーの保存:</strong> ユーザーが設定画面で入力したAPIキーは、ユーザーのデバイス内にローカルかつ安全に保存され、当方が取得することはありません。</li>
+      <li><strong>外部へのデータ送信:</strong> 本アプリのエディターに入力されたテキスト（Context/Intent）および画像データは、設計仕様書（Markdown）を生成する目的のみで、Google社のAPIサーバーに直接送信されます。送信されたデータの取り扱いは、Google社のプライバシーポリシーおよび利用規約に準拠します。</li>
+    </ul>
+    <p><a href="https://policies.google.com/privacy" target="_blank">Google プライバシー ポリシー</a></p>
+  </section>
+
+  <section>
+    <h2>3. ファイルの保存</h2>
+    <p>本アプリで生成されたMarkdownファイルや関連データは、ユーザーが指定したデバイス内のローカルフォルダ（Storage）にのみ保存されます。当方がこれらのファイルにアクセスすることはありません。</p>
+  </section>
+
+  <section>
+    <h2>4. データの安全性</h2>
+    <p>本アプリは、AppleのmacOSの標準的なセキュリティフレームワークに従って開発されています。ただし、ユーザー自身が入力・管理するAPIキーの保管については、ユーザーご自身の責任において厳重に管理してください。</p>
+  </section>
+
+  <section>
+    <h2>5. プライバシーポリシーの変更</h2>
+    <p>当方は、本アプリの機能追加や法令の変更に伴い、本プライバシーポリシーを随時更新することがあります。変更があった場合は、本ページにて最新のポリシーを公開します。</p>
+  </section>
+
+  <section>
+    <h2 id="support">6. お問い合わせ</h2>
+    <p>本プライバシーポリシーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。</p>
+    <p>開発者: <strong>DRAGON SYSTEM（金子 龍）</strong></p>
+    <p>連絡先: <strong>contact@dragonsystem.net</strong></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 DRAGON SYSTEM (Ryu Kaneko) — TATTVA</p>
+  <p style="margin-top:8px">このページは App Store / Mac App Store 申請のプライバシーポリシーとして使用されます。</p>
+</footer>
+
+</body>
+</html>
